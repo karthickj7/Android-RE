@@ -45,5 +45,5 @@ Java.perform(() => {
     libsLoaded();
     setTimeout(function () {
         enumerateLibraryLoaded();
-    }, 100);
+    }, 1000);
 })

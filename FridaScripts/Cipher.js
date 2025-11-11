@@ -41,9 +41,8 @@ Java.perform(function() {
         base64.decode.overloads[0].implementation = function(endString, flags) {
             let result = this.decode(endString, flags);
             var class_name = decodefindClass();
-            console.log('--------------------------------------------------------------------------');
-            console.log(`base64.decode('${endString}') \nreturns -> ${byteArrayToString(result)}`)
-            printStackTrace();
+            console.log(`${"-".repeat(100)}\nbase64.decode('${endString}') \n ----> ${byteArrayToString(result)}`)
+            // printStackTrace();
             return result;
         }
     } catch (error) {}
@@ -51,9 +50,8 @@ Java.perform(function() {
         base64.encode.overloads[0].implementation = function(endString, flags) {
             let result = this.encode(endString, flags);
             var class_name = decodefindClass();
-            console.log('--------------------------------------------------------------------------');
-            console.log(`base64.encode('${byteArrayToString(endString)}') \nreturns -> ${byteArrayToString(result)}`)
-            printStackTrace();
+            console.log(`${"-".repeat(100)}\nbase64.encode('${byteArrayToString(endString)}') \n ----> ${byteArrayToString(result)}`)
+            // printStackTrace();
             return result;
         }
     } catch (error) {}
@@ -62,13 +60,22 @@ Java.perform(function() {
         const Base64$Encoder = Java.use("java.util.Base64$Encoder");
         Base64$Encoder.encodeToString.overload('[B').implementation = function(arg0) {
             var retval = this.encodeToString(arg0);
-            console.log('--------------------------------------------------------------------------');
-            console.log(`Base64.getEncoder().encodeToString('${byteArrayToString(endString)}') \nreturns -> ${byteArrayToString(result)}`)
+            console.log(`${"-".repeat(100)}\nBase64.getEncoder().encodeToString('${byteArrayToString(arg0)}') \n ----> ${retval}`)
             return retval;
         };
 
     } catch (error) {}
 
+    try {
+        const Base64 = Java.use("android.util.Base64");
+        Base64$Encoder.encodeToString.overload('[B','java.lang.integer').implementation = function (arg0) {
+            var retval = this.encodeToString(arg0);
+            console.log(`${"-".repeat(100)}\nBase64.encodeToString('${byteArrayToString(arg0)}') \n ----> ${retval}`)
+            return retval;
+        };
+
+    } catch (error) { }
+    
 
     /**
      * --------- CIPHER
@@ -79,9 +86,8 @@ Java.perform(function() {
     Cipher['doFinal'].overload('[B').implementation = function(data) {
         let result = this.doFinal(data);
         var class_name = decodefindClass();
-        console.log('--------------------------------------------------------------------------');
-        console.log(`Cipher.doFinal('${byteArrayToString(data)}') \nreturns -> ${byteArrayToString(result)}`);
-        printStackTrace();
+        console.log(`${"-".repeat(100)}\nCipher.doFinal('${byteArrayToString(data)}') \n ----> ${byteArrayToString(result)}`);
+        // printStackTrace();
         return result
     };
 

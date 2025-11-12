@@ -1,7 +1,9 @@
-aaa -> Analyze all functions
-afl -> List functions
-pdf -> Print disassembly code
-s -> Seek for address
-v -> Virtual 
-iz -> Strings
-ie -> Entry address
+aaa -->  Analyze all functions
+afl -->  List functions
+pdf -->  Print disassembly code
+s   -->  Seek for address
+v   -->  Virtual 
+iz  -->  Strings
+ie  -->  Entry address
+fs  -->  display flagspace
+axt [addr] -->  find data/code references to this address

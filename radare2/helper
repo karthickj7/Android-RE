@@ -4,6 +4,8 @@ pdf -->  Print disassembly code
 s   -->  Seek for address
 v   -->  Virtual 
 iz  -->  Strings
+is  --> Symbols
 ie  -->  Entry address
 fs  -->  display flagspace
 axt [addr] -->  find data/code references to this address
+~[stringa] --> Regex search

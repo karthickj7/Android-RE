@@ -1,0 +1,18 @@
+aaa -->  Analyze all functions
+afl -->  List functions
+pdf -->  Print disassembly code
+s   -->  Seek for address
+v   -->  Virtual 
+iz  -->  Strings
+is  --> Symbols
+iS  --> List all the sections available
+ie  -->  Entry address
+fs  -->  display flagspace
+axt [addr] -->  find data/code references to this address
+~[stringa] --> Regex search
+s section..[name] --> to move to a specific section
+ood --> To pass input 
+db addr --> Add breakpoint 
+dc --> continue execution 
+px --> show hexdump
+
